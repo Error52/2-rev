@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INDUSTRI4L H3LL CTF</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <div class="brand">INDUSTRI4L H3LL</div>
+    <nav>
+      <a href="#upload">Загрузка</a>
+      <a href="#challenges">Таски</a>
+      <a href="#scoreboard">Скорборд</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="tag">CTFd-inspired / industrial workflow</p>
+      <h1>Загружай свои CTF таски — игроки скачивают и решают</h1>
+      <p>Ниже есть форма для добавления задания, описания и файла (например, архив). Таски сохраняются в браузере (localStorage).</p>
+    </section>
+
+    <section id="upload" class="panel">
+      <h2>Добавить таску</h2>
+      <form id="taskForm" class="form-grid">
+        <input id="title" required placeholder="Название таски" />
+        <input id="category" required placeholder="Категория (Web, Pwn...)" />
+        <input id="points" type="number" min="1" required placeholder="Очки" />
+        <input id="flag" required placeholder="Флаг (например, flag{...})" />
+        <textarea id="description" required placeholder="Описание задания"></textarea>
+        <input id="taskFile" type="file" />
+        <button class="btn primary" type="submit">Сохранить таску</button>
+      </form>
+      <p class="hint">* Файлы хранятся в этом браузере и доступны для скачивания участникам через кнопку Download.</p>
+    </section>
+
+    <section id="challenges" class="panel">
+      <div class="panel-head">
+        <h2>Challenges</h2>
+        <input id="search" type="search" placeholder="Поиск по названию/категории" />
+      </div>
+      <div id="challengeGrid" class="grid"></div>
+    </section>
+
+    <section id="scoreboard" class="panel">
+      <h2>Scoreboard (демо)</h2>
+      <table>
+        <thead><tr><th>#</th><th>Команда</th><th>Очки</th></tr></thead>
+        <tbody id="scores"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
